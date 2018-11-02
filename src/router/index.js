@@ -8,6 +8,7 @@ import UserTable from '../components/user/UserTable'
 import About from '../components/About'
 import Main from '../components/Main'
 import Login from '../components/Login'
+import Register from '../components/Register'
 
 Vue.use(Router)
 
@@ -19,7 +20,7 @@ export default new Router({
       component: Main,
       children: [
         {
-          path: '/',
+          path: '',
           name: '第一个界面',
           component: Home
         },
@@ -46,12 +47,17 @@ export default new Router({
       component: Login
     },
     {
+      path: '/register',
+      type: 'register',
+      component: Register
+    },
+    {
       path: '/user',
       name: '用户相关',
       component: HelloWorld,
       children: [
         {
-          path: '/',
+          path: '',
           name: '第一个界面',
           component: UserTable
         },
